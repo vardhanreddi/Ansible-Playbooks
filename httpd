@@ -1,0 +1,8 @@
+---
+- name: installing apache server
+  hosts: localhost
+  tasks:
+  - name: install httpd packages
+    yum:
+     name: httpd
+     state: present
