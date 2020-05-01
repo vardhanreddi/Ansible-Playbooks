@@ -1,0 +1,14 @@
+- name: launching ec2 instance in aws
+  hosts: localhost
+  tasks:
+  - name: launching instance in aws console
+    ec2:
+     instance_type: t2.micro
+     count: 1
+     region: ap-south-1
+     image: ami-016ec067d44808c4f
+     group: default
+     vpc_subnet_id: subnet-2fbe9147
+     assign_public_ip: yes
+     key_name: ansible
+     wait: yes

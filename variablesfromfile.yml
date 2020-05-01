@@ -1,0 +1,8 @@
+- name: variables from file
+  hosts: all
+  vars_files:
+    - ./vars/variables.yml
+  tasks:
+  - name: variables from files
+    debug:
+     msg: "{{a}}" 

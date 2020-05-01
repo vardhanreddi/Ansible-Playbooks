@@ -1,0 +1,8 @@
+- name: delteing instance
+  hosts: localhost
+  tasks:
+  - name: delete ec2
+    ec2:
+     instance_id: i-0096376b2a99f5c54
+     region: ap-south-1
+     state: absent

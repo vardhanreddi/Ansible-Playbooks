@@ -1,0 +1,10 @@
+---
+ - name: using register command
+   hosts: all
+   tasks: 
+   - command:
+       touch: /tmp/vardhan.txt
+     register: reg
+   - debug:
+      msg: "{{reg}}"
+

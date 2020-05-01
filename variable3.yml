@@ -1,0 +1,10 @@
+- name: variable3 with array demo
+  hosts: all
+  vars: 
+   countries: [us,ind,japan,uk,china,pak]
+  tasks:
+  - name: substitute the variable
+    debug: 
+     msg: "{{item}}"
+    with_items:
+    - "{{countries}}"  

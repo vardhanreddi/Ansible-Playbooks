@@ -1,0 +1,18 @@
+---
+- name: deploy vsftpd
+  hosts: webservers
+  tasks: 
+  - name: install vsftpd
+    yum: 
+     name: vsftpd
+     state: present
+  - name: start the service
+    service: name=vsftpd enabled=true
+  - name: create readme file
+    copy: 
+      content: "welcome to the first ansible playbok"
+      dest: /var/ftp/pub/README
+      force: no
+      mode: 0444
+... 
+    

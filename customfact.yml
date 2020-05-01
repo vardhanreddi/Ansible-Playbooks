@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+  - name: fetching custom facts from remote machine
+    debug: 
+     msg: "the cutome fact is {{ansible_local}}"
+
+

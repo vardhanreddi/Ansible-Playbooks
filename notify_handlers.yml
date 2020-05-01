@@ -1,0 +1,16 @@
+---
+- name: handlers
+  hosts: all
+  tasks:
+  - name: installing httpd
+    yum:
+     name: httpd
+     state: latest
+  - name: starting the service
+    service:
+     name: httpd
+     enabled: true
+  - name: notifying the process
+    notify:
+      - restart httpd
+...

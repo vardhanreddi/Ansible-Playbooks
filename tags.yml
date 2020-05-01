@@ -1,0 +1,14 @@
+---
+- name: demonstarting tags
+  hosts: all
+  tasks:
+  - name: tagging
+    yum: 
+     name: zip
+     state: latest
+    tags: prod
+  - name: installing httpd
+    yum: 
+     name: httpd
+     state: latest
+   

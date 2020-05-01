@@ -1,0 +1,15 @@
+---
+- name: Handlers demonstartion
+  hosts: all
+  tasks:
+  - name: copying the files to apache
+    copy:
+     src: /root/index.html 
+     dest: /var/www/html/index.html
+    notify:
+     - apache_restart
+  handlers:
+  - name: apache_restart
+    service:
+      name: httpd
+      state: restarted

@@ -1,0 +1,29 @@
+- hosts: all
+  gather_facts: true
+  tasks:
+  - name: facts testing with default variables
+    debug:
+     msg: "{{ansible_all_ipv4_addresses[0]}}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

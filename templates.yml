@@ -1,0 +1,13 @@
+---
+- name: demonstrating jinja2 templates
+  hosts: all
+  tasks:
+  - name: template module with jinja2
+    template:
+     src: jinja.j2
+     dest: /tmp/sample.txt
+    register: var
+  - name: printing message
+    debug:
+     msg: "{{var}}"
+

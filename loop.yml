@@ -1,0 +1,13 @@
+---
+ - name: loops explanation
+   hosts: all
+   vars:
+    packageinsta:
+     - httpd
+     - vsftpd
+   tasks:
+   - name: going through iteration of the list through varibale call
+     yum:
+      name: "{{item}}"
+      state: absent 
+     loop: "{{packageinsta}}"

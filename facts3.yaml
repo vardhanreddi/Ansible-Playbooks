@@ -1,0 +1,6 @@
+- name: Ansible Variable Example Playbook
+  hosts: all
+  tasks:
+  - name: messaging the type of the fact  
+    debug:
+      msg: "Data type of 'ansible_architecture'  is {{ ansible_architecture | type_debug }} "

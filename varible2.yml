@@ -1,0 +1,14 @@
+---
+- name: sample varibale2
+  hosts: all
+  vars: 
+   countries:
+    - india
+    - us
+    - japan
+    - uk
+  tasks:
+  - name: variable susbstitute
+    debug: 
+     msg: "{{countries[1]}}"
+

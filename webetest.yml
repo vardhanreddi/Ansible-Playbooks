@@ -1,0 +1,28 @@
+---
+- name: installing apache server
+  hosts: all
+  tasks:
+  - name: install httpd packages
+    yum:
+     name: httpd
+     state: present
+  - name: starting the service
+    service:
+      name: httpd
+      state: started
+  - name: copying the files
+    copy:
+      content: "welcome to ansible keep practcicing and you will good good Job"  
+      dest: /var/www/html/index.html
+- name: test web server
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: access url
+    uri:
+     url: http://13.234.200.150
+     return_content: yes
+     status_code: 200
+...
+
+

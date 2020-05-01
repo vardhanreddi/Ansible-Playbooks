@@ -1,0 +1,6 @@
+---
+- name: roles demonstartion
+  hosts: all
+  roles:
+  - lamp
+...

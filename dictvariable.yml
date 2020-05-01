@@ -1,0 +1,11 @@
+- name: disct variable
+  hosts: all
+  vars:
+   sample:
+    movie: drushyam
+    director: vardhan
+    producer: vardhan
+  tasks:
+  - name: substitute
+    debug: 
+     msg: "{{sample['director']}}"
