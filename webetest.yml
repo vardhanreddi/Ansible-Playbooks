@@ -1,6 +1,6 @@
 ---
 - name: installing apache server
-  hosts: all
+  hosts: localhost
   tasks:
   - name: install httpd packages
     yum:
